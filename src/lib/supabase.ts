@@ -4,11 +4,15 @@ const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
 const supabaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY;
 
 if (!supabaseUrl) {
-  throw new Error('Falta VITE_SUPABASE_URL');
+  throw new Error(
+    'Falta VITE_SUPABASE_URL. Configurala en las variables de entorno de Netlify y volvé a hacer el deploy.'
+  );
 }
 
 if (!supabaseAnonKey) {
-  throw new Error('Falta VITE_SUPABASE_ANON_KEY');
+  throw new Error(
+    'Falta VITE_SUPABASE_ANON_KEY. Configurala en las variables de entorno de Netlify y volvé a hacer el deploy.'
+  );
 }
 
 export const supabase = createClient(
@@ -30,4 +34,7 @@ export type Post = {
   updated_at: string;
 };
 
-export type PostDraft = Omit<Post, 'id' | 'created_at' | 'updated_at'>;
+export type PostDraft = Omit<
+  Post,
+  'id' | 'created_at' | 'updated_at'
+>;
