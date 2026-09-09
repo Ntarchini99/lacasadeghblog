@@ -144,7 +144,7 @@ function App() {
       <header className="site-header">
         <div className="topline"><span>LA CASA DE GRAN HERMANO</span><span>Información, análisis y todo lo que pasa dentro de la casa</span><span className="topline-date">Buenos Aires · {new Intl.DateTimeFormat('es-AR', { month: 'long', year: 'numeric' }).format(new Date())}</span></div>
         <div className="nav-wrap">
-          <button className="brand" onClick={goHome} aria-label="Ir al inicio"><span className="brand-text">LA CASA DE GRAN HERMANO</span></button>
+          <button className="brand" onClick={goHome} aria-label="Ir al inicio"><span className="brand-text">LA CASA DE GH</span></button>
           <nav className={mobileMenu ? 'main-nav is-open' : 'main-nav'}>
             <button className={view === 'home' ? 'nav-link active' : 'nav-link'} onClick={goHome}>Inicio</button>
             <button className="nav-link admin-link" onClick={openAdmin}><ShieldCheck size={15} /> Administración</button>
@@ -167,7 +167,7 @@ function App() {
           <div><p className="footer-label">Explorá</p><button onClick={goHome}>Últimas noticias</button><button onClick={openAdmin}>Administración</button></div>
           <div><p className="footer-label">Seguinos</p><div className="footer-social">{socialLinks.map(({ label, url, Icon }) => <a key={label} href={url} target="_blank" rel="noopener noreferrer" aria-label={label} className="footer-social-link"><Icon size={20} /></a>)}</div><p className="footer-label disclaimer-label">La Casa de GH</p><p className="disclaimer">Sitio independiente. No es la página oficial de Gran Hermano ni está afiliado oficialmente al programa.</p></div>
         </div>
-        <div className="footer-bottom"><span>© {new Date().getFullYear()} La Casa de Gran Hermano</span><span>Hecho para quienes viven el reality</span></div>
+        <div className="footer-bottom"><span>© {new Date().getFullYear()} La Casa de Gran Hermano</span></div>
       </footer>
     </div>
   );
